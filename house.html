@@ -1,0 +1,33 @@
+{\rtf1}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- A-Frame: For creating 3D/AR scenes easily -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+
+    <!-- AR.js: Library for AR functionality -->
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+
+    <!-- Set viewport to ensure proper mobile display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <!-- A-Frame Scene to display the AR content -->
+    <a-scene embedded arjs>
+      <a-assets>
+        <!-- Preload your 3D model here -->
+        <a-asset-item id="my-model" src="https://drive.google.com/file/d/1Y8qQnSYYryOYDY872lVvcWwxBzQa-sHr/view?usp=drive_link"></a-asset-item>
+      </a-assets>
+
+      <!-- AR marker that triggers the AR scene -->
+      <a-marker preset="hiro">
+        <!-- Your 3D model will appear inside the marker -->
+        <a-entity gltf-model="#my-model" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+      </a-marker>
+
+      <!-- Camera required for AR -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
